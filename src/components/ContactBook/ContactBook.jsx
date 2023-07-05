@@ -93,5 +93,5 @@ ContactBook.propTypes = {
       number: PropTypes.string.isRequired
     })
   ),
-  name: PropTypes.starind.isRequired,
+  name: PropTypes.string.isRequired,
 };
