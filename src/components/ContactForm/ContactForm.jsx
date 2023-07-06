@@ -6,18 +6,18 @@ import css from './ContactForm.module.css';
 export default class ContactForm extends Component {
   state = {
     name: '',
-    namber: '',
+    number: '',
   };
 
-  hendleChange = event => {
+  handleChange = event => {
     const { name, value } = event.target;
-    this.state({ [name]: value });
+    this.setState({ [name]: value });
   };
 
-  hendleSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault();
     const { name, number } = this.state;
-
+ 
     if (name.trim() !== '' && number.trim() !== '') {
       const newContact = {
         id: nanoid(),
@@ -31,7 +31,8 @@ export default class ContactForm extends Component {
       });
     }
   };
-  render () {
+
+  render() {
     const { name, number } = this.state;
 
     return (
@@ -72,7 +73,6 @@ export default class ContactForm extends Component {
     );
   }
 }
-
 ContactForm.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
